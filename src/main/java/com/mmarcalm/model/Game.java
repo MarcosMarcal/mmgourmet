@@ -2,6 +2,9 @@ package com.mmarcalm.model;
 
 public interface Game {
 
-    void start();
+    void startOrContinue();
+    BinaryTree createInitialTree();
+    Node recursiveNextQuestion(Node currentNode);
+    void gameFinalization();
 
 }
