@@ -1,15 +1,18 @@
 package com.mmarcalm.model;
 
+import lombok.Data;
+
+@Data
 public class Node {
 
-    String food;
+    String nodeValue;
     Node left;
     Node right;
 
-    Node(String food) {
-        this.food = food;
-        right = null;
+    public Node(String newNodeValue) {
+        this.nodeValue = newNodeValue;
         left = null;
+        right = null;
     }
 
 }
