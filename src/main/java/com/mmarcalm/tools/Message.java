@@ -17,39 +17,35 @@ public class Message {
      * This is the method which rise up the initial dialog.
      * @return int Return tap on OK button.
      */
-    public static int showStart() {
+    public static int showStart(String title, String text) {
 
-        var text = "Pense em um prato que gosta";
         var frame = new JFrame();
         Object[] options = {"Ok"};
-
-        return JOptionPane.showOptionDialog(frame, text, "MM Gourmet", JOptionPane.YES_NO_OPTION,
+        return JOptionPane.showOptionDialog(frame, text, title, JOptionPane.YES_NO_OPTION,
                                             JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
     }
 
-    public static int showBinary(int yes, int no) {
+    public static int showBinary(String text, String currentValue) {
 
         Object[] options = {"Sim", "Não"};
-
-        var text = "Qual opção...";
         var frame = new JFrame();
-
-        int choice = JOptionPane.showOptionDialog(frame, text, "MM",
-                       JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
-
-        return choice;
+        return JOptionPane.showOptionDialog(frame, text, "Comfirme",
+                                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
     }
 
-    public static Object showInput(int param) {
+    public static Object showInput(String title, String text) {
 
-        // TODO: 04/07/2021 Alterar o label deste pop-up, pois está em inglês...
-
-        var text = "Qual nome dessa comida";
         var frame = new JFrame();
+        return JOptionPane.showInputDialog(frame, text, title, JOptionPane.QUESTION_MESSAGE, null, null, null);
 
-        Object answer = JOptionPane.showInputDialog(frame, text, "Desisto", JOptionPane.QUESTION_MESSAGE, null, null, null);
+    }
 
-        return answer;
+    public static int showCorrectAnswer(String text) {
+
+        var frame = new JFrame();
+        Object[] options = {"Ok"};
+        return JOptionPane.showOptionDialog(frame, text, "MM Gourmet", JOptionPane.YES_NO_OPTION,
+                JOptionPane.INFORMATION_MESSAGE, null, options, options[0]);
     }
 
 }
