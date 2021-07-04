@@ -12,7 +12,7 @@ import javax.swing.*;
 public class FoodGame implements Game {
 
     @Override
-    public void startOrContinue() {
+    public void start() {
 
         var foodTree = createInitialTree();
 

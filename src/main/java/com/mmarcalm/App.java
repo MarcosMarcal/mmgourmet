@@ -21,11 +21,8 @@ public class App
     }
 
     private static void gameExecution(Game newGame) {
-        // TODO: 04/07/2021 -  Instance other game genres...
 
-        var game = new FoodGame();
-
-        game.startOrContinue();
+        newGame.start();
 
     }
 }

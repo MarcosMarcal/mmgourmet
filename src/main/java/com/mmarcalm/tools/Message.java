@@ -1,6 +1,8 @@
 package com.mmarcalm.tools;
 
 import javax.swing.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
  *  Class responsible for displaying the specific dialog for each invocation.
