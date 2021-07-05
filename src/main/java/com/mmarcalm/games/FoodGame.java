@@ -17,7 +17,7 @@ public class FoodGame implements Game {
         var foodTree = createInitialTree();
 
         var title = "MM Gourmet";
-        var welcomeText = "Pense numa comida...";
+        var welcomeText = "Pense em um prato que gosta ";
         do {
             var startGame = Message.showStart(title, welcomeText);
 
@@ -42,13 +42,13 @@ public class FoodGame implements Game {
 
     @Override
     public Node recursiveNextQuestion(Node currentNode) {
-        var question = "A sua comida é " + currentNode.getNodeValue() + "?";
+        var question = "O prato que você pensou é " + currentNode.getNodeValue() + "?";
         var answer = Message.showBinary(question, currentNode.getNodeValue());
 
         switch (answer) {
             case JOptionPane.YES_OPTION:
                 if (null == currentNode.getLeft()) {
-                    Message.showCorrectAnswer("Advinhei!");
+                    Message.showCorrectAnswer("Acertei de novo!");
                 } else {
                     recursiveNextQuestion(currentNode.getLeft());
                 }
@@ -56,9 +56,9 @@ public class FoodGame implements Game {
 
             case JOptionPane.NO_OPTION:
                 if (null == currentNode.getRight()) {
-                    var newFood = (String) Message.showInput("Desisto","Qual é a comida?");
+                    var newFood = (String) Message.showInput("Desisto","Qual prato você pensou?");
                     var newQuestion = (String) Message.showInput("Complete",
-                                        newFood + " é ______ mas " + currentNode.getNodeValue() + " não é.");
+                                        newFood + " é ______ mas " + currentNode.getNodeValue() + " não.");
 
                     currentNode.setRight( new Node(currentNode.getNodeValue()));
                     currentNode.setLeft( new Node(newFood));
