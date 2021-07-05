@@ -1,8 +1,8 @@
 package com.mmarcalm.model;
 
 import lombok.Data;
-@Data
 
+@Data
 public class BinaryTree {
 
 
@@ -10,11 +10,6 @@ public class BinaryTree {
 
     public BinaryTree(String rootValue) {
         this.rootElement = new Node(rootValue);
-    }
-
-    public void add(String newElement, int yesNoOption) {
-
-
     }
 
 }
