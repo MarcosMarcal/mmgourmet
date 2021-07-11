@@ -1,12 +1,9 @@
 package com.mmarcalm;
 
-import com.mmarcalm.games.FoodGame;
-import com.mmarcalm.model.BinaryTree;
+import com.mmarcalm.games.foodgame.FoodGame;
+import com.mmarcalm.games.foodgame.MessageFoodGame;
 import com.mmarcalm.model.Game;
-import com.mmarcalm.tools.Message;
 import lombok.extern.java.Log;
-
-import javax.swing.*;
 
 
 @Log
@@ -14,14 +11,14 @@ public class App
 {
     public static void main( String[] args )
     {
-        // TODO: 04/07/2021 -  Add other game genres besides FoodGame
 
-        gameExecution(new FoodGame());
+        gameExecution(new FoodGame(new MessageFoodGame()));
 
     }
 
     private static void gameExecution(Game newGame) {
 
+        log.info("Starting new game...");
         newGame.start();
 
     }
